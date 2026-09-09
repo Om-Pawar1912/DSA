@@ -14,7 +14,7 @@ class Solution {
 
        int x = 0;
        int y = arr.size()-1;
-       while(x<=y){
+       while(x<y){
         if(arr.get(x)!=arr.get(y))
         {
             ans = false;
