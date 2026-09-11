@@ -4,39 +4,33 @@ class Solution {
         if (head == null || head.next == null) {
             return head;
         }
-
         ListNode dummy1 = new ListNode(-1);
         ListNode dummy2 = new ListNode(-1);
+        
 
-        ListNode d1 = dummy1;
-        ListNode d2 = dummy2;
+        ListNode t1 = dummy1;
+        ListNode t2 = dummy2;
 
-        ListNode k = head;
+        ListNode t = head;
 
-        while (k != null) {
-
-            // Odd position
-            d1.next = k;
-            d1 = d1.next;
-
-            k = k.next;
-
-            if (k != null) {
-
-                // Even position
-                d2.next = k;
-                d2 = d2.next;
-
-                k = k.next;
-            }
+        while(t!=null){
+            t1.next = t;
+            t = t.next;
+            t1 = t1.next;
+            t2.next = t;
+            t2 = t2.next;
+            if(t!=null) t = t.next;
         }
 
-        // End the even list
-        d2.next = null;
-
-        // Connect odd list with even list
-        d1.next = dummy2.next;
+       t1.next = dummy2.next;
 
         return dummy1.next;
+
+
+
+        
+
+
+
     }
 }
